@@ -6,7 +6,25 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = F, warning = F)
 ```
 
 Map of Hawaiian Land Use/Land Cover and Watersheds
+
+```{r}
+#Loading the packages that will be used for this analysis
+
+# Packages for general use:
+library(tidyverse)
+library(janitor)
+library(lubridate)
+library(here)
+library(RColorBrewer)
+
+# Packages for spatial analysis:
+library(sf)
+library(tmap)
+library(mapview)
+
+```
+

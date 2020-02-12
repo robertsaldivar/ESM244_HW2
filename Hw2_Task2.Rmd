@@ -6,7 +6,44 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = F, warning = F)
 ```
 
 Time series data wrangling and visualization
+
+```{r}
+#loading the packages that I think that I will need for this time series analysis
+
+#Packages for general use:
+library(tidyverse)
+library(janitor)
+library(lubridate)
+library(here)
+library(RColorBrewer)
+library(knitr)
+
+#Packages for time series use:
+library(tsibble)
+library(fable)
+library(fabletools)
+library(feasts)
+
+# Reading in the data that will be analyzed
+read_csv(here("data", "cbr_fish_passage_bonneville_allyrs_steelhead.csv"))
+```
+
+
+
+1. Summary of the project.
+
+2. Images of Bonneville Dam and/or steelhead
+
+```{r}
+knitr::include_graphics("images/bonneville-dam-and-people-fishing.jpg")
+
+```
+
+https://www.goodfreephotos.com/united-states/oregon/other-oregon/bonneville-dam-and-people-fishing.jpg.php
+
+
+3. code
