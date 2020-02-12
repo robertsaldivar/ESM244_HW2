@@ -1,0 +1,12 @@
+---
+title: "HW2_Task2"
+author: "Robert Saldivar"
+date: "February 11, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Time series data wrangling and visualization
