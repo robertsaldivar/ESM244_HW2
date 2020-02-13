@@ -28,8 +28,8 @@ library(fable)
 library(fabletools)
 library(feasts)
 
-# Reading in the data that will be analyzed
-read_csv(here("data", "cbr_fish_passage_bonneville_allyrs_steelhead.csv"))
+# Reading in the data that will be analyzed:
+steelhead_passage <- read_csv(here("data", "cbr_fish_passage_bonneville_allyrs_steelhead.csv"))
 ```
 
 
@@ -47,3 +47,38 @@ https://www.goodfreephotos.com/united-states/oregon/other-oregon/bonneville-dam-
 
 
 3. code
+
+```{r}
+# This code chunk is going to parse and arrange the dates in the data so that it can be in yyyymm, yr_mo_date
+
+
+
+
+```
+
+
+```{r}
+#This code chunk is going to create a time series plot of daily observation of steelhead passing through the dam.
+
+
+
+
+```
+
+
+
+```{r}
+#This code chunk is going to explore the monthly passage of steelhead through the dam over time.
+
+
+```
+
+
+
+```{r}
+#This code chuck is going to show the annual total of steelhead passing through the dam.
+
+
+
+```
+

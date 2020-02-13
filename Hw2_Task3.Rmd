@@ -28,3 +28,63 @@ library(mapview)
 
 ```
 
+
+```{r}
+# Reading in the data:
+
+HI_LULC <- read_sf(dsn = here("data"), layer = "Land_Use_Land_Cover_LULC")  #this is selecting only the landcover to be retained in the data
+
+
+HI_watersheds <- read_sf(dsn = here("data"), layer = "Watersheds")
+
+```
+
+
+```{r}
+#This code chunk is for an initial exploration of the spatial data and wrangling of the data
+
+plot(HI_LULC)
+#The CRS of HI_LULC is 4326
+ 
+plot(HI_watersheds)
+#The CRS of HI_watersheds is 4326
+
+
+
+```
+
+
+```{r}
+#This code chunk is going to subset the all of the HI islands to just the island of Ni'ihau
+
+Ni_ihau_LULC <- HI_LULC %>%
+  filter(objectid == 112 |objectid == 119 |objectid == 148 |objectid == 161 |objectid == 164 |objectid == 168 |objectid == 190 |objectid == 203 |objectid == 205 |objectid == 222 |objectid == 223 |objectid == 225 |objectid == 229 |objectid == 230 |objectid == 231 |objectid == 232 |objectid == 233 |objectid == 234 |objectid == 235 |objectid == 236 |objectid == 237) %>%
+  select(landcover)
+#By finding the object id's for Ni'ihau I was able to filter so that I have only looking at the land cover for the island of Ni'ihau.
+
+# I am then going to clip the Ni'ihau land cover with the watersheds so the only the watersheds of so that only the water sheds is left.
+
+Ni_ihau_watersheds <- st_intersection(HI_watersheds, Ni_ihau_LULC)
+
+plot(Ni_ihau_LULC)
+plot(Ni_ihau_watersheds)
+
+```
+
+
+```{r}
+#This is going to be a map of the land use types for the Hawaiian islands
+
+ggplot() +
+  geom_sf(aes(fill = landcover), color = "NA") 
+
+```
+
+
+
+```{r}
+#This is going to a map of the watersheds in the Hawaiian islands
+
+
+```
+
